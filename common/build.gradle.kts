@@ -12,14 +12,14 @@ kotlin {
     androidTarget {
         compilations.all {
             kotlinOptions {
-                jvmTarget = "11"
+                jvmTarget = JavaVersion.VERSION_1_8.toString()
             }
         }
     }
 
     jvm("desktop") {
         compilations.all {
-            kotlinOptions.jvmTarget = "11"
+            kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
         }
     }
 
