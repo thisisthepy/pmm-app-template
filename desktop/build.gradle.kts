@@ -11,15 +11,33 @@ version = "1.0-SNAPSHOT"
 kotlin {
     jvm {
         compilations.all {
-            kotlinOptions.jvmTarget = "17"
+            kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
         }
         withJava()
     }
+    val osName = System.getProperty("os.name")
+    val targetOs = when {
+        osName == "Mac OS X" -> "macos"
+        osName.startsWith("Win") -> "windows"
+        osName.startsWith("Linux") -> "linux"
+        else -> error("Unsupported OS: $osName")
+    }
+
+    var targetArch = when (val osArch = System.getProperty("os.arch")) {
+        "x86_64", "amd64" -> "x64"
+        "aarch64" -> "arm64"
+        else -> error("Unsupported arch: $osArch")
+    }
+
+    val version = libs.versions.skiko.get()
+    val target = "${targetOs}-${targetArch}"
+
     sourceSets {
         val jvmMain by getting {
             dependencies {
                 implementation(projects.common)
                 implementation(compose.desktop.currentOs)
+                implementation("org.jetbrains.skiko:skiko-awt-runtime-$target:$version")
                 api(compose.preview)
             }
         }
