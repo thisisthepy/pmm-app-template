@@ -18,4 +18,6 @@ dependencyResolutionManagement {
 rootProject.name = "Test"
 
 include(":androidApp")
+include(":desktopApp")
+include(":webApp")
 include(":common")
