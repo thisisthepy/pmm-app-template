@@ -61,7 +61,7 @@ android {
 }
 
 dependencies {
-    implementation(projects.pycompose)
+    implementation(projects.pycomposeui)
     implementation(projects.common)
     implementation(compose.ui)
     implementation(compose.material3)
