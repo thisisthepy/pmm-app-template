@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.jetpack.compose)
 }
 
-group = "io.github.thisisthepy.pycompose.test"
+group = "io.github.thisisthepy.pycomposeui.test"
 version = "1.0-SNAPSHOT"
 
 kotlin {

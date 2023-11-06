@@ -18,10 +18,10 @@ chaquopy {
 }
 
 android {
-    namespace = "io.github.thisisthepy.pycompose.test.android"
+    namespace = "io.github.thisisthepy.pycomposeui.test.android"
     compileSdk = 34
     defaultConfig {
-        applicationId = "io.github.thisisthepy.pycompose.test.android"
+        applicationId = "io.github.thisisthepy.pycomposeui.test.android"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

@@ -91,7 +91,7 @@ kotlin {
 }
 
 android {
-    namespace = "io.github.thisisthepy.pycompose.test"
+    namespace = "io.github.thisisthepy.pycomposeui.test"
     compileSdk = 34
     defaultConfig {
         minSdk = 24
