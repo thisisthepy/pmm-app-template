@@ -2,6 +2,19 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.jetpack.compose)
+
+    alias(libs.plugins.chaquo.python)
+}
+
+chaquopy {
+    defaultConfig {
+        version = "3.11"
+    }
+    sourceSets {
+        getByName("main") {
+            srcDir("src/main/python")
+        }
+    }
 }
 
 android {
@@ -13,6 +26,9 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+        ndk {
+            abiFilters += listOf("arm64-v8a", "armeabi-v7a", "x86_64", "x86")
+        }
     }
     buildFeatures {
         compose = true
@@ -38,11 +54,14 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
     sourceSets {
-        getByName("main").kotlin.srcDirs("src/main/kotlin")
+        getByName("main") {
+            kotlin.srcDirs("src/main/kotlin")
+        }
     }
 }
 
 dependencies {
+    implementation(projects.pycompose)
     implementation(projects.common)
     implementation(compose.ui)
     implementation(compose.material3)

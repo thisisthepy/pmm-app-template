@@ -10,6 +10,7 @@ androidx-appcompat = "1.6.1"
 androidx-core = "1.12.0"
 ktor = "2.3.5"
 koin = "3.4.0"
+chaquo = "15.0.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -33,3 +34,4 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlin-cocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
 jetpack-compose = { id = "org.jetbrains.compose", version.ref = "compose" }
+chaquo-python = { id = "com.chaquo.python", version.ref = "chaquo" }

@@ -5,4 +5,6 @@ plugins {
     alias(libs.plugins.kotlin.android).apply(false)
     alias(libs.plugins.kotlin.multiplatform).apply(false)
     alias(libs.plugins.jetpack.compose).apply(false)
+
+    alias(libs.plugins.chaquo.python).apply(false)
 }

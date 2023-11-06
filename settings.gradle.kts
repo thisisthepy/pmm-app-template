@@ -4,7 +4,13 @@ pluginManagement {
         google()
         gradlePluginPortal()
         mavenCentral()
-        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+
+        maven {
+            setUrl("https://jitpack.io")
+            setUrl("https://kotlin.bintray.com/kotlinx")
+            setUrl("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+            setUrl("https://chaquo.com/maven-test")
+        }
     }
 }
 
@@ -21,3 +27,4 @@ include(":android")
 include(":desktop")
 include(":web")
 include(":common")
+include(":pycompose")
