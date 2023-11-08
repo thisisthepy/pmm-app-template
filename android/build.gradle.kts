@@ -61,6 +61,7 @@ android {
 }
 
 dependencies {
+    //implementation(projects.pythonMultiplatform)
     implementation(projects.pycomposeui)
     implementation(projects.common)
     implementation(compose.ui)

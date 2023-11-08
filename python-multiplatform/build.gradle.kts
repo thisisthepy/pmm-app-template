@@ -50,6 +50,7 @@ kotlin {
                 api(compose.material3)
                 implementation(libs.ktor.core)
                 implementation(libs.koin.core)
+                implementation(libs.stately.concurrent.collections)
             }
         }
         val commonTest by getting {

@@ -1,10 +1,14 @@
 package io.github.thisisthepy.pycomposeui
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import com.chaquo.python.PyObject
 import com.chaquo.python.Python
 import com.chaquo.python.android.AndroidPlatform
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 
 
 @Composable
@@ -12,7 +16,9 @@ fun PythonLauncher(
     content: @Composable () -> Unit
 ) {
     if (!Python.isStarted()) {
-        Python.start(AndroidPlatform(LocalContext.current))
+        val platform = AndroidPlatform(LocalContext.current)
+        platform.redirectStdioToLogcat()
+        Python.start(platform)
         println("PythonLauncher: Python is started...")
     }
     content()
@@ -22,7 +28,15 @@ fun PythonLauncher(
 fun PythonWidget(moduleName: String, composableName: String, content: @Composable () -> Unit) {
     val py = Python.getInstance()
     val module = py.getModule(moduleName)
-    module.callAttr(composableName, content)
+    val contents = module.callAttr(composableName, content)
+    contents.call()
+}
+
+@Composable
+fun PythonWidget(moduleName: String, composableName: String) {
+    val py = Python.getInstance()
+    val module = py.getModule(moduleName)
+    module.callAttr(composableName)
 }
 
 fun runPy(moduleName: String, functionName: String): String {
@@ -38,12 +52,25 @@ fun getVersion(): String {
     return sys.get("version").toString()
 }
 
-@Composable
-fun PythonAppView(moduleName: String, composableName: String) {
-    PythonWidget(moduleName, composableName) { }
+fun getText(): String {
+    val py = Python.getInstance()
+    val sys = py.getModule("pycomposeui")
+    return sys.get("version").toString()
 }
 
 @Composable
-fun ComposableTemplate(pyFunction: PyObject) {
-    pyFunction.callAttr("__call__")
+fun PythonAppView(moduleName: String, composableName: String) {
+    PythonWidget(moduleName, composableName)
 }
+
+@Composable
+fun BoxBinding(modifier: Modifier = Modifier,
+               contentAlignment: Alignment = Alignment.TopStart,
+               propagateMinConstraints: Boolean = false,
+               content: @Composable BoxScope.() -> Unit) {
+    Box(modifier, contentAlignment, propagateMinConstraints, content)
+}
+
+fun getModifier() = Modifier
+
+fun getAlignment() = Alignment
