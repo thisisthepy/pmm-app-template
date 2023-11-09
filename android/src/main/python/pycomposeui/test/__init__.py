@@ -1,24 +1,38 @@
+from pycomposeui.runtime import Composable, EmptyComposable
+from pycomposeui.material3 import SimpleText
+
 from java import jclass
-
-appview = jclass("io.github.thisisthepy.pycomposeui.PythonAppView_androidKt")
-# print("Python: appview -", appview)
-# composable_wrapper = appview.ComposableTemplate
-# print("Composable:", composable_wrapper)
-#
-#
-# def check():
-#     return "Hi there, this is python code"
-#
-#
-# def composable(pycomposefunc):
-#     return lambda composer, val: composable_wrapper(pycomposefunc, composer, val)
+import traceback
 
 
-box = jclass("androidx.compose.foundation.layout.BoxKt").Box
-UI = jclass("io.github.thisisthepy.pycomposeui.PythonAppView_androidKt")
-Alignment = UI.getAlignment()
-Modifier = UI.getModifier()
+try:
+    @Composable
+    def UiTestCase(text: str = "UiTestCase"):
+        SimpleText(text)
 
 
-def mybox(content):
-    return lambda *args, **kwargs: content(*args, **kwargs)
+    @Composable
+    class UiTest:
+        def compose(self, content: Composable = EmptyComposable):
+            UiTestCase(text="UiTestCase in UiTest")
+            #content()
+
+
+    @Composable
+    class BasicText:
+        @classmethod
+        def compose(cls, text: str = "BasicText"):
+            SimpleText(text)
+
+
+    @Composable
+    class RichText(Composable):
+        @staticmethod
+        def compose(content: Composable = EmptyComposable):
+            BasicText("Basic Text inside of Rich Text")
+            content()
+except Exception as err:
+    print("-----------------------------------------------------------------------------------------------------------")
+    traceback.print_exc()
+    print("-----------------------------------------------------------------------------------------------------------")
+    raise err

@@ -3,12 +3,12 @@ package io.github.thisisthepy.pycomposeui
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
-import com.chaquo.python.PyObject
-import com.chaquo.python.Python
-import com.chaquo.python.android.AndroidPlatform
+import androidx.compose.runtime.currentComposer
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import com.chaquo.python.Python
+import com.chaquo.python.android.AndroidPlatform
 
 
 @Composable
@@ -20,6 +20,8 @@ fun PythonLauncher(
         platform.redirectStdioToLogcat()
         Python.start(platform)
         println("PythonLauncher: Python is started...")
+        val runtime = Python.getInstance().getModule("pycomposeui.runtime")
+        runtime.get("Composable")?.callAttr("register_composer", currentComposer)
     }
     content()
 }
@@ -28,15 +30,12 @@ fun PythonLauncher(
 fun PythonWidget(moduleName: String, composableName: String, content: @Composable () -> Unit) {
     val py = Python.getInstance()
     val module = py.getModule(moduleName)
-    val contents = module.callAttr(composableName, content)
-    contents.call()
+    module.callAttr(composableName, content)
 }
 
 @Composable
 fun PythonWidget(moduleName: String, composableName: String) {
-    val py = Python.getInstance()
-    val module = py.getModule(moduleName)
-    module.callAttr(composableName)
+    PythonWidget(moduleName, composableName) {}
 }
 
 fun runPy(moduleName: String, functionName: String): String {
@@ -74,3 +73,4 @@ fun BoxBinding(modifier: Modifier = Modifier,
 fun getModifier() = Modifier
 
 fun getAlignment() = Alignment
+
