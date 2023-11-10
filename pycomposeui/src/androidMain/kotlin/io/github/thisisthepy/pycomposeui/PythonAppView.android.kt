@@ -43,7 +43,7 @@ fun PythonLauncher(
         val composable = runtime["Composable"]
         if (composable != null) {
             composable.callAttr("register_composer", currentComposer)
-            println("PythonLauncher: Composer registered.")
+            println("PythonLauncher: Composer is registered.")
         } else {
             throw RuntimeException("PythonLauncher: Failed to register Composer. Cannot find Composable class in python runtime.")
         }
@@ -65,15 +65,15 @@ val os: PyObject
 
 @Composable
 fun PythonWidget(
-    modifier: Modifier = Modifier,
     composableName: String,
-    moduleName: String = moduleNamePreset,
+    modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
     color: Color = MaterialTheme.colorScheme.surface,
     contentColor: Color = contentColorFor(color),
     tonalElevation: Dp = 0.dp,
     shadowElevation: Dp = 0.dp,
     border: BorderStroke? = null,
+    moduleName: String = moduleNamePreset,
     content: @Composable (args: Array<Any>) -> Unit = {}
 ) {
     val module = getPyModule(moduleName)
@@ -92,14 +92,24 @@ fun PythonAppView(
     shadowElevation: Dp = 0.dp,
     border: BorderStroke? = null
 ) {
-    PythonWidget(modifier, moduleNamePreset, "App",
-        shape, color, contentColor, tonalElevation, shadowElevation, border)
+    PythonWidget("App", modifier, shape, color, contentColor,
+        tonalElevation, shadowElevation, border, moduleNamePreset)
 }
 
-fun runPy(functionName: String, moduleName: String = moduleNamePreset): String {
+fun runPy(functionName: String, moduleName: String = moduleNamePreset, vararg args: Any): PyObject {
     val module = getPyModule(moduleName)
-    val result = module.callAttr(functionName)
-    return result.toString()
+    println(args.toList())
+    return when {
+        args.isEmpty() -> module.callAttr(functionName)
+        else -> module.callAttr(functionName, *(args.toList().toTypedArray()))
+    }
+}
+
+fun doCompose(content: PyObject, vararg args: Any): PyObject {
+    //return runPy("do_compose", "pycomposeui.runtime", content, *args)
+    val module = getPyModule("pycomposeui.runtime")
+    println(args.toList())
+    return module.callAttr("do_compose", content)
 }
 
 @Composable

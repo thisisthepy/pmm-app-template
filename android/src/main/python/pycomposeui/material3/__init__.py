@@ -1,4 +1,4 @@
-from pycomposeui.runtime import Composable, EmptyComposable
+from pycomposeui.runtime import Composable, EmptyComposable, ComposableTemplate
 
 from java import jclass
 import traceback
@@ -23,7 +23,8 @@ try:
     class SimpleColumn(Composable):
         @classmethod
         def compose(cls, content):
-            _SimpleColumn(content, cls.composer, 1)
+            print(content)
+            _SimpleColumn(ComposableTemplate(content, [], cls.composer, 1), cls.composer, 1)
 
     _AnnotatedStringText = _material3.AnnotatedStringTextWidget
     #AnnotatedStringText = lambda composer, *args, **kwargs: _AnnotatedStringText(*args, **kwargs, composer, 1)

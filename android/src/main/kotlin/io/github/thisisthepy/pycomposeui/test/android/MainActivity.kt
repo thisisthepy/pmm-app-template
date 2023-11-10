@@ -27,10 +27,10 @@ class MainActivity : ComponentActivity() {
 
                 Surface(Modifier.fillMaxSize()) {
                     Column(Modifier.fillMaxSize()) {
-                        PythonWidget(Modifier, "UiTest") {
+                        PythonWidget("UiTest", Modifier) {
                             Text(Greeting().greet()+"khlkhlkgfdgj")
                         }
-                        PythonWidget(Modifier, "RichText") {
+                        PythonWidget("RichText", Modifier) {
                             Text(Greeting().greet()+"ssss")
                         }
                     }
