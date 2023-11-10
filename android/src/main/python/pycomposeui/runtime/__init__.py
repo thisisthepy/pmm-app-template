@@ -20,10 +20,6 @@ try:
     print("Compose Runtime:", _runtime)
     ComposableWrapper = _runtime.ComposableWrapper
     print("Composable Wrapper:", ComposableWrapper)
-    _runtime_android = jclass("io.github.thisisthepy.pycomposeui.Runtime_androidKt")
-    print("Compose Android Runtime:", _runtime_android)
-    ComposableTemplate = _runtime_android.ComposableTemplate
-    print("Composable Template:", ComposableTemplate)
     ComposableLambdaImpl = jclass("androidx.compose.runtime.internal.ComposableLambdaImpl")
     print("Composable Lambda:", ComposableLambdaImpl)
 
@@ -72,7 +68,7 @@ try:
         def __invoke(self, *args, **kwargs):
             """ Invoke composableLambda / composableLambdaInstance
             Ref: https://sungbin.land/jetpack-compose-%EB%9F%B0%ED%83%80%EC%9E%84%EC%97%90%EC%84%9C-%EC%9D%BC%EC%96%B4%EB%82%98%EB%8A%94-%EB%A7%88%EB%B2%95-%EC%99%84%EC%A0%84%ED%9E%88-%ED%8C%8C%ED%95%B4%EC%B9%98%EA%B8%B0-composeinitial-4c4c306c0a8c
-            !WARNING! keyword 'content' must be specified in the kwargs
+            !WARNING! keyword 'content' must be specified in the kwargs not in the args
             """
             composer = self.composer
             content = kwargs.pop("content", None)
@@ -81,16 +77,14 @@ try:
                 if isinstance(content, Composable) or content is None:
                     pass
                 elif isinstance(content, JavaClass) or isinstance(content, ComposableLambdaImpl):
-                    content = lambda: ComposableWrapper(content, composer, 1)  # Raw Kotlin Composable
+                    content = KotlinComposable(content)  # Raw Kotlin Composable
                 else:
                     raise ValueError(f"Error: Invalid Content Type. Please check your Composable's arguments - Current content type: {type(content)}")
 
                 if content is not None:
                     kwargs['content'] = content
 
-                composition_target = self.compose
-                print(self.__dict__, composition_target, composition_target.__code__.co_varnames, args, kwargs)
-                composition_target(*args, **kwargs)  # Python Composable
+                self.compose(*args, **kwargs)  # Python Composable
             except Exception as err:
                 print("-----------------------------------------------------------------------------------------------------------")
                 traceback.print_exc()
@@ -151,8 +145,10 @@ try:
 
         def __init__(self, content):
             super().__init__()
-            self.compose = content
-            print(self.__dict__, flush=True)
+            self.content = content
+
+        def compose(self, *args):
+            ComposableWrapper(self.content, args, self.composer, 1)
 
 
     @Composable
@@ -160,7 +156,6 @@ try:
         """ Empty Composition """
         def __init__(self, *_, **__):
             super().__init__()
-            print(self.__dict__, flush=True)
 
 except Exception as e:
     print("-----------------------------------------------------------------------------------------------------------")

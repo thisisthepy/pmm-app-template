@@ -6,6 +6,6 @@ import kotlin.jvm.JvmName
 
 @JvmName("ComposableWrapper")
 @Composable
-fun ComposableWrapper(content: @Composable () -> Unit) {
-    content()
+fun ComposableWrapper(content: @Composable (args: Array<Any>) -> Unit, args: Array<Any>) {
+    content(args)
 }

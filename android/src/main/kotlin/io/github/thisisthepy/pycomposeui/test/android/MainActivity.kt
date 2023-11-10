@@ -23,12 +23,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             PythonLauncher {
+                moduleNamePreset = "pycomposeui.main"
+
                 Surface(Modifier.fillMaxSize()) {
                     Column(Modifier.fillMaxSize()) {
-                        PythonWidget("pycomposeui.test", "UiTest") {
+                        PythonWidget(Modifier, "UiTest") {
                             Text(Greeting().greet()+"khlkhlkgfdgj")
                         }
-                        PythonWidget("pycomposeui.test", "RichText") {
+                        PythonWidget(Modifier, "RichText") {
                             Text(Greeting().greet()+"ssss")
                         }
                     }
