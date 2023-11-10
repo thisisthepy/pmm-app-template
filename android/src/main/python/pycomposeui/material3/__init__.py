@@ -9,7 +9,6 @@ try:
     _Text = _material3.TextWidget
     #Text = lambda composer, *args, **kwargs: _Text(*args, **kwargs, composer, 1)
     _SimpleText = _material3.SimpleTextWidget
-    print("Simple Text Widget:", _SimpleText)
 
     @Composable
     class SimpleText(Composable):

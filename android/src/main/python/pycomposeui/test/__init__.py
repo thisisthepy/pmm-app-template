@@ -1,5 +1,5 @@
 from pycomposeui.runtime import Composable, EmptyComposable
-from pycomposeui.material3 import SimpleText
+from pycomposeui.material3 import SimpleText, _SimpleText
 
 from java import jclass
 import traceback
@@ -15,7 +15,7 @@ try:
     class UiTest:
         def compose(self, content: Composable = EmptyComposable):
             UiTestCase(text="UiTestCase in UiTest")
-            #content()
+            content()
 
 
     @Composable
@@ -30,7 +30,7 @@ try:
         @staticmethod
         def compose(content: Composable = EmptyComposable):
             BasicText("Basic Text inside of Rich Text")
-            content()
+            #content()
 except Exception as err:
     print("-----------------------------------------------------------------------------------------------------------")
     traceback.print_exc()

@@ -25,7 +25,6 @@ class MainActivity : ComponentActivity() {
             PythonLauncher {
                 Surface(Modifier.fillMaxSize()) {
                     Column(Modifier.fillMaxSize()) {
-                        Text(Greeting().greet()+"Kotlin")
                         PythonWidget("pycomposeui.test", "UiTest") {
                             Text(Greeting().greet()+"khlkhlkgfdgj")
                         }

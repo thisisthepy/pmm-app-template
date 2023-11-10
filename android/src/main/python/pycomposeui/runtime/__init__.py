@@ -39,10 +39,12 @@ try:
 
         def __new__(cls, composable=None):
             """ When @Composable is called """
-            if isinstance(composable, Composable):  # is child of Composable
-                return composable()  # return an instance of the composable argument
-            else:
-                return super().__new__(cls)  # return a new instance of the Composable class
+            try:
+                if issubclass(composable, Composable):  # is child of Composable
+                    return super().__new__(composable)  # return an instance of the composable argument
+            except TypeError as _:
+                pass
+            return super().__new__(cls)  # return a new instance of the Composable class
 
         def __init__(self, composable=None):
             """ When @Composable is called """
@@ -51,8 +53,7 @@ try:
                 cp_info(self, composable)
                 self.from_function = True
             elif composable is None or issubclass(composable, Composable):  # When the decorative target is a child class of Composable or itself
-                if composable is not None:
-                    cp_info(self, composable)
+                cp_info(self, type(self) if composable is None else composable)
             else:  # When the decorative target is an object other than a child class of Composable
                 if hasattr(composable, "content"):
                     target = composable  # When the compose method is staticmethod/classmethod
@@ -89,7 +90,7 @@ try:
 
                 composition_target = self.compose
                 print(self.__dict__, composition_target, composition_target.__code__.co_varnames, args, kwargs)
-                ComposableTemplate(lambda: composition_target(*args, **kwargs), composer, 1)  # Python Composable
+                composition_target(*args, **kwargs)  # Python Composable
             except Exception as err:
                 print("-----------------------------------------------------------------------------------------------------------")
                 traceback.print_exc()
@@ -157,7 +158,7 @@ try:
     @Composable
     class EmptyComposable(Composable):
         """ Empty Composition """
-        def __init__(self):
+        def __init__(self, *_, **__):
             super().__init__()
             print(self.__dict__, flush=True)
 

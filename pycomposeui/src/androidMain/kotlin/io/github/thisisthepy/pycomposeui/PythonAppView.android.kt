@@ -38,6 +38,13 @@ fun PythonWidget(moduleName: String, composableName: String) {
     PythonWidget(moduleName, composableName) {}
 }
 
+@Composable
+fun PythonSimpleWidget(moduleName: String, composableName: String) {
+    val py = Python.getInstance()
+    val module = py.getModule(moduleName)
+    module.callAttr(composableName)
+}
+
 fun runPy(moduleName: String, functionName: String): String {
     val py = Python.getInstance()
     val module = py.getModule(moduleName)
