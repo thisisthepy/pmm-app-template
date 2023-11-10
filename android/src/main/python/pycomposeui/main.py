@@ -1,5 +1,5 @@
 from pycomposeui.runtime import Composable, EmptyComposable
-from pycomposeui.material3 import SimpleText, SimpleColumn
+from pycomposeui.material3 import SimpleText, SimpleColumn, SimpleRow
 
 from java import jclass
 import traceback
@@ -10,15 +10,13 @@ def UiTestCase(text: str = "UiTestCase"):
     SimpleText(text)
 
 
-def ColumnContent(content: Composable = EmptyComposable):
-    UiTestCase(text="UiTestCase in UiTest")
-    content()
-
-
 @Composable
 class UiTest:
     def compose(self, content: Composable = EmptyComposable):
-        SimpleColumn(lambda: ColumnContent(content))
+        SimpleColumn(lambda: {
+            UiTestCase(text="UiTestCase in UiTest"),
+            content()
+        })
 
 
 @Composable
@@ -32,5 +30,11 @@ class BasicText:
 class RichText(Composable):
     @staticmethod
     def compose(content: Composable = EmptyComposable):
-        BasicText("Basic Text inside of Rich Text")
-        content()
+        SimpleColumn(Composable(lambda: {
+            BasicText("Basic Text inside of Rich Text"),
+            SimpleRow(lambda: {
+                BasicText("Row Left Side"),
+                BasicText("Row Right Side")
+            }),
+            content()
+        }))

@@ -20,17 +20,8 @@ try:
     print("Compose Runtime:", _runtime)
     ComposableWrapper = _runtime.ComposableWrapper
     print("Composable Wrapper:", ComposableWrapper)
-    _runtime_android = jclass("io.github.thisisthepy.pycomposeui.Runtime_androidKt")
-    print("Compose Android Runtime:", _runtime)
-    ComposableTemplate = _runtime_android.ComposableTemplate
-    print("Composable Template:", ComposableTemplate)
     ComposableLambdaImpl = jclass("androidx.compose.runtime.internal.ComposableLambdaImpl")
     print("Composable Lambda:", ComposableLambdaImpl)
-
-
-    def do_compose(content: Composable, *args):
-        """ Run a composition triggered by Kotlin side """
-        return content(*args)
 
 
     class Composable:

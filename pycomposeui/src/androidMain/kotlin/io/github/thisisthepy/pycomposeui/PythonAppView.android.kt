@@ -98,26 +98,10 @@ fun PythonAppView(
 
 fun runPy(functionName: String, moduleName: String = moduleNamePreset, vararg args: Any): PyObject {
     val module = getPyModule(moduleName)
-    println(args.toList())
     return when {
         args.isEmpty() -> module.callAttr(functionName)
         else -> module.callAttr(functionName, *(args.toList().toTypedArray()))
     }
-}
-
-fun doCompose(content: PyObject, vararg args: Any): PyObject {
-    //return runPy("do_compose", "pycomposeui.runtime", content, *args)
-    val module = getPyModule("pycomposeui.runtime")
-    println(args.toList())
-    return module.callAttr("do_compose", content)
-}
-
-@Composable
-fun BoxBinding(modifier: Modifier = Modifier,
-               contentAlignment: Alignment = Alignment.TopStart,
-               propagateMinConstraints: Boolean = false,
-               content: @Composable BoxScope.() -> Unit) {
-    Box(modifier, contentAlignment, propagateMinConstraints, content)
 }
 
 fun getModifier() = Modifier

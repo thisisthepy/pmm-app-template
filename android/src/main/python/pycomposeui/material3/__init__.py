@@ -1,4 +1,4 @@
-from pycomposeui.runtime import Composable, EmptyComposable, ComposableTemplate
+from pycomposeui.runtime import Composable, EmptyComposable
 
 from java import jclass
 import traceback
@@ -12,6 +12,7 @@ try:
     #Text = lambda composer, *args, **kwargs: _Text(*args, **kwargs, composer, 1)
     _SimpleText = _material3.SimpleTextWidget
     _SimpleColumn = _material3_android.SimpleColumnWidget
+    _SimpleRow = _material3_android.SimpleRowWidget
 
     @Composable
     class SimpleText(Composable):
@@ -23,8 +24,13 @@ try:
     class SimpleColumn(Composable):
         @classmethod
         def compose(cls, content):
-            print(content)
-            _SimpleColumn(ComposableTemplate(content, [], cls.composer, 1), cls.composer, 1)
+            _SimpleColumn(content, cls.composer, 1)
+
+    @Composable
+    class SimpleRow(Composable):
+        @classmethod
+        def compose(cls, content):
+            _SimpleRow(content, cls.composer, 1)
 
     _AnnotatedStringText = _material3.AnnotatedStringTextWidget
     #AnnotatedStringText = lambda composer, *args, **kwargs: _AnnotatedStringText(*args, **kwargs, composer, 1)
