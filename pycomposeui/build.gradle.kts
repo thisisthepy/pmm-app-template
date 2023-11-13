@@ -62,6 +62,7 @@ kotlin {
                 api(libs.androidx.appcompat)
                 api(libs.androidx.core)
                 implementation(libs.ktor.jvm)
+                implementation(libs.toasterAtSnackBar)
             }
         }
         val desktopMain by getting {

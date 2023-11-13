@@ -13,6 +13,7 @@ try:
     _SimpleText = _material3.SimpleTextWidget
     _SimpleColumn = _material3_android.SimpleColumnWidget
     _SimpleRow = _material3_android.SimpleRowWidget
+    _SimpleButton = _material3_android.SimpleButtonWidget
 
     @Composable
     class SimpleText(Composable):
@@ -31,6 +32,12 @@ try:
         @classmethod
         def compose(cls, content):
             _SimpleRow(content, cls.composer, 1)
+
+    @Composable
+    class SimpleButton(Composable):
+        @classmethod
+        def compose(cls, onclick, content):
+            _SimpleButton(onclick, content, cls.composer, 1)
 
     _AnnotatedStringText = _material3.AnnotatedStringTextWidget
     #AnnotatedStringText = lambda composer, *args, **kwargs: _AnnotatedStringText(*args, **kwargs, composer, 1)

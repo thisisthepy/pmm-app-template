@@ -18,10 +18,14 @@ def cp_info(target, ori):
 try:
     _runtime = jclass("io.github.thisisthepy.pycomposeui.RuntimeKt")
     print("Compose Runtime:", _runtime)
-    ComposableWrapper = _runtime.ComposableWrapper
+    _runtime_android = jclass("io.github.thisisthepy.pycomposeui.Runtime_androidKt")
+    print("Compose Android Runtime:", _runtime_android)
+    ComposableWrapper = _runtime.composableWrapper
     print("Composable Wrapper:", ComposableWrapper)
     ComposableLambdaImpl = jclass("androidx.compose.runtime.internal.ComposableLambdaImpl")
     print("Composable Lambda:", ComposableLambdaImpl)
+    _rememberSaveable = _runtime_android.rememberSaveableWrapper
+    print("Remember Saveable:", _rememberSaveable)
 
 
     class Composable:
@@ -60,6 +64,12 @@ try:
                 self.compose = target.compose
                 cp_info(self, composable)
 
+        def __repr__(self):
+            return f"<{self.__module__}.{self.__name__} @Composable object at {hex(id(self))}>"
+
+        def __str__(self):
+            return self.__repr__()
+
         @staticmethod
         def compose(*args, **kwargs):
             """ Composition Content method for compose """
@@ -69,6 +79,7 @@ try:
             """ Invoke composableLambda / composableLambdaInstance
             Ref: https://sungbin.land/jetpack-compose-%EB%9F%B0%ED%83%80%EC%9E%84%EC%97%90%EC%84%9C-%EC%9D%BC%EC%96%B4%EB%82%98%EB%8A%94-%EB%A7%88%EB%B2%95-%EC%99%84%EC%A0%84%ED%9E%88-%ED%8C%8C%ED%95%B4%EC%B9%98%EA%B8%B0-composeinitial-4c4c306c0a8c
             !WARNING! keyword 'content' must be specified in the kwargs not in the args
+            :raises ValueError: When content is not callable
             """
             composer = self.composer
             content = kwargs.pop("content", None)
@@ -84,7 +95,7 @@ try:
                 if content is not None:
                     kwargs['content'] = content
 
-                self.compose(*args, **kwargs)  # Python Composable
+                return self.compose(*args, **kwargs)  # Python Composable
             except Exception as err:
                 print("-----------------------------------------------------------------------------------------------------------")
                 traceback.print_exc()
@@ -92,50 +103,31 @@ try:
                 raise err
 
         def __call__(self, *args, **kwargs):
-            """ Do Composition """
+            """ Do Composition
+            :raises RuntimeError: When Composer is not set from Kotlin before Python is loaded
+            """
             if self.composer is None:
                 raise RuntimeError("Composer for Composable must be registered before Composition starts.")
+            vars = self.compose.__code__.co_varnames
             try:
-                index = self.compose.__code__.co_varnames.index("content") - (0 if self.from_function else 1)
+                # Check if content variable is set and where it is
+                index = vars.index("content") - (0 if self.from_function else 1)  # ValueError could be raised
+
+                # Find the actual content variable
                 if "content" in kwargs:
                     content = kwargs.pop("content")
                 else:
                     args = list(args)
-                    content = args.pop(index)
+                    # if pop failed, that means the content argument is set but the content variable not been received
+                    content = args.pop(index)  # IndexError could be raised
 
                 if content is None:
                     content = EmptyComposable
-            except ValueError as _:
+            except (ValueError, IndexError) as _:
                 content = None
 
             kwargs['content'] = content
-            self.__invoke(*args, **kwargs)
-
-
-    #TODO
-    class ComposableClass(Composable):
-        """ Composable Object Class (not Singleton) for Jetpack Compose """
-
-        def __new__(cls, composable=None):
-            """ When @Composable is called """
-            if isinstance(composable, Composable):
-                return composable  # TODO
-            else:
-                if hasattr(composable, "content"):
-                    # When the content method is staticmethod/classmethod
-                    class ComposableClass(Composable):
-                        compose = composable.compose
-                else:
-                    # When the content method is instancemethod
-                    class ComposableClass(Composable):
-                        def __init__(self):
-                            super().__init__()
-                            self.compose = composable().compose
-
-                ComposableClass.__name__ = composable.__name__
-                ComposableClass.__doc__ = composable.__doc__
-                ComposableClass.__module__ = composable.__module__
-                return ComposableClass
+            return self.__invoke(*args, **kwargs)
 
 
     class KotlinComposable(Composable):
@@ -151,11 +143,71 @@ try:
             ComposableWrapper(self.content, args, self.composer, 1)
 
 
+    class KotlinWidget(KotlinComposable):
+        """ Kotlin Composable Linker Class """
+        _package_name_preset_: str = ""
+
+        @classmethod
+        def set_package_name_preset(cls, name):
+            """ Set the Kotlin package name prefix
+            !WARNING: This method can be called only once.
+            :raises RuntimeError: If this method is called multiple times
+            """
+            if not cls._package_name_preset_:
+                cls._package_name_preset_ = name
+            else:
+                raise RuntimeError("KotlinWidget: Kotlin package name preset can be set only once.")
+
+        @classmethod
+        def get_package_name_preset(cls) -> str:
+            """ Returns the Kotlin package name prefix """
+            return cls._package_name_preset_
+
+        def __new__(cls, classname, varname=None, package=None):
+            """
+            :raises ModuleNotFoundError: If the class cannot be found (NoClassDefFoundError)
+            :param classname: Kotlin class/module name without package name
+            :param varname: Kotlin variable/function name, can be None if you want to use the class itself
+            :param package: Kotlin package name
+            """
+            # Search Class
+            classname = classname.replace(".", "_")
+            try:
+                try:
+                    content = jclass(f"{package}.{classname}")
+                except Exception as errr:
+                    try:
+                        content = jclass(f"{package}.{classname}Kt")  # retry with -Kt suffix
+                    except Exception as _:
+                        raise errr
+            except Exception as err:
+                raise ModuleNotFoundError(
+                    "Could not find the specified Kotlin class."
+                    "Please ensure that the class/object is excluded from the build by ProGuard optimization."
+                ) from err
+
+            # Get Variable/Method/Function
+            if varname:
+                content = content.__dict__[varname]
+
+            return super().__new__(cls, content)
+
+
     @Composable
     class EmptyComposable(Composable):
         """ Empty Composition """
         def __init__(self, *_, **__):
             super().__init__()
+
+
+    @Composable
+    def remember_saveable(value):
+        _type = type(value).__name__
+        if _type == "int":
+            if value < -2147483648 or value > 2147483647:
+                _type = "long"
+        return _rememberSaveable(value, _type, Composable.composer, 1)
+
 
 except Exception as e:
     print("-----------------------------------------------------------------------------------------------------------")

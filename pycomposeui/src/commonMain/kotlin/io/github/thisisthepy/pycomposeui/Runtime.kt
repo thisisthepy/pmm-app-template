@@ -4,8 +4,11 @@ import androidx.compose.runtime.Composable
 import kotlin.jvm.JvmName
 
 
-@JvmName("ComposableWrapper")
+/*
+ * Description: Composable Wrapper contains Kotlin Composable can be invoked by Python functions
+ */
+@JvmName("composableWrapper")
 @Composable
-fun ComposableWrapper(content: @Composable (args: Array<Any>) -> Unit, args: Array<Any>) {
-    content(args)
+fun composableWrapper(content: @Composable (args: Array<Any>) -> Any, args: Array<Any>): Any {
+    return content(args)
 }

@@ -1,14 +1,11 @@
 package io.github.thisisthepy.pycomposeui
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.contentColorFor
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.currentComposer
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
@@ -39,15 +36,16 @@ fun PythonLauncher(
         platform.redirectStdioToLogcat()
         Python.start(platform)
         println("PythonLauncher: Python is started...")
-        val runtime = Python.getInstance().getModule("pycomposeui.runtime")
-        val composable = runtime["Composable"]
-        if (composable != null) {
-            composable.callAttr("register_composer", currentComposer)
-            println("PythonLauncher: Composer is registered.")
-        } else {
-            throw RuntimeException("PythonLauncher: Failed to register Composer. Cannot find Composable class in python runtime.")
-        }
     }
+    val runtime = Python.getInstance().getModule("pycomposeui.runtime")
+    val composable = runtime["Composable"]
+    if (composable != null) {
+        composable.callAttr("register_composer", currentComposer)
+        println("PythonLauncher: Composer is registered.")
+    } else {
+        throw RuntimeException("PythonLauncher: Failed to register Composer. Cannot find Composable class in python runtime.")
+    }
+
     content()
 }
 
@@ -92,8 +90,10 @@ fun PythonAppView(
     shadowElevation: Dp = 0.dp,
     border: BorderStroke? = null
 ) {
-    PythonWidget("App", modifier, shape, color, contentColor,
-        tonalElevation, shadowElevation, border, moduleNamePreset)
+    val module = getPyModule(moduleNamePreset)
+    Surface(modifier, shape, color, contentColor, tonalElevation, shadowElevation, border) {
+        module.callAttr("App")
+    }
 }
 
 fun runPy(functionName: String, moduleName: String = moduleNamePreset, vararg args: Any): PyObject {
@@ -103,8 +103,3 @@ fun runPy(functionName: String, moduleName: String = moduleNamePreset, vararg ar
         else -> module.callAttr(functionName, *(args.toList().toTypedArray()))
     }
 }
-
-fun getModifier() = Modifier
-
-fun getAlignment() = Alignment
-
