@@ -21,7 +21,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Test"
+rootProject.name = "PyComposeUI"
 
 include(":android")
 include(":desktop")
