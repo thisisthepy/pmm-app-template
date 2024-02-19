@@ -36,7 +36,7 @@ kotlin {
         iosSimulatorArm64()
     ).forEach {
         it.binaries.framework {
-            baseName = "pycomposeui"
+            baseName = "PyComposeUI"
         }
     }
 

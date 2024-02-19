@@ -7,4 +7,3 @@ import androidx.compose.ui.Modifier
 fun getModifier() = Modifier
 
 fun getAlignment() = Alignment
-

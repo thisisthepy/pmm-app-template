@@ -34,13 +34,14 @@ kotlin {
         iosSimulatorArm64()
     ).forEach {
         it.binaries.framework {
-            baseName = "common"
+            baseName = "Common"
         }
     }
 
     sourceSets {
         val commonMain by getting {
             dependencies {
+                api(projects.pycomposeui)
                 api(compose.runtime)
                 api(compose.ui)
                 api(compose.foundation)
@@ -57,6 +58,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
+                api(projects.pycomposeui)
                 api(libs.androidx.appcompat)
                 api(libs.androidx.core)
                 implementation(libs.ktor.jvm)
@@ -64,6 +66,7 @@ kotlin {
         }
         val desktopMain by getting {
             dependencies {
+                api(projects.pycomposeui)
                 api(compose.preview)
                 implementation(libs.ktor.jvm)
             }
@@ -81,6 +84,7 @@ kotlin {
         val iosSimulatorArm64Main by getting
         val iosMain by getting {
             dependencies {
+                api(projects.pycomposeui)
                 implementation(libs.ktor.ios)
             }
             iosX64Main.dependsOn(this)
