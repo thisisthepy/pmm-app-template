@@ -10,8 +10,15 @@ class PyObject private constructor(val address: Long) {
     companion object {
         private val cache: MutableMap<Long, WeakReference<PyObject>> = HashMap()
 
+        private var _nativeFFI: Python.PyFFI? = null
+
+        internal fun notifyPythonStarted(nativeFFI: Python.PyFFI) {
+            _nativeFFI = nativeFFI
+        }
+
         internal fun notifyPythonKilled() {
             cache.clear()
+            _nativeFFI = null
         }
 
         fun fromAddress(address: Long): PyObject? {
@@ -29,5 +36,13 @@ class PyObject private constructor(val address: Long) {
             cache[address] = WeakReference(obj)
             return obj
         }
+    }
+
+    fun getAttribute(attr: String): PyObject? {
+        return fromAddress(_nativeFFI!!.pyObjectGetAttrString(this.address, attr))
+    }
+
+    fun call(): PyObject? {
+        return fromAddress(_nativeFFI!!.pyObjectCallObject(this.address, 0L))
     }
 }

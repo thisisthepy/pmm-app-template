@@ -7,23 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05994D22B1AAD8FA4C708881 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B36493D916FCC3810B1C3CD /* libz.tbd */; };
-		08D64A02AFD7E4D7D7A2751A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEB49B597831C46AA127608 /* Accelerate.framework */; };
-		0EF5476B9B4BA693829AFFDD /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DE840E0BA273F0C46AF746F /* Photos.framework */; };
-		21E444448AAA87AE353A2864 /* libssl.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2CB4CF7B2D42CD329BE5C7A /* libssl.xcframework */; };
-		2CFA4677AFD6C3ED985B96F7 /* libSDL2_ttf.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAF460895EA2B3799DDD082 /* libSDL2_ttf.xcframework */; };
-		329F44D9BE456B2156075AC9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4A49D3A89A8DF72F3CB88E /* libc++.tbd */; };
-		3A754535BADE292945001594 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A945465E8D2FC10E9224234F /* GameController.framework */; };
-		5F704A039E9A93617B9DEBF4 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 796340898FF6E1E1C8BE3038 /* libbz2.tbd */; };
-		60524B85973A9ED078419A07 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BC424C8579C3851DDB1C3E /* Metal.framework */; };
-		66F541D2BC782AF4131DDF50 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C8414882D8666AD797B99B /* AudioToolbox.framework */; };
-		6CC34032B2623ABA3EB2D835 /* libSDL2_mixer.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B6541559D6E4E2596B5FE18 /* libSDL2_mixer.xcframework */; };
-		741A42F78EF9813FDE735FB6 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72364FE98963BEC1354E22E1 /* CoreMotion.framework */; };
-		74DE4518AA52FDB042ECDAF0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD54D90B21650C31B5D1B07 /* libsqlite3.tbd */; };
-		75E84F739A6AE0C9923ECE48 /* libcrypto.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B73A4E68BD09038F984AC52F /* libcrypto.xcframework */; };
-		7E0544A6949B4B747C929F13 /* libkivy.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945C433ABFACD20732C7C0B1 /* libkivy.xcframework */; };
-		82B74383BFD266399EFBC4AE /* CoreHaptics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD434D75BC9668337AC1719C /* CoreHaptics.framework */; };
-		82E4404BA67E4574AC3BBA59 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FF4391ADD810284DF2907C /* OpenGLES.framework */; };
+		17C44BF39806A70427BDF42F /* libffi.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB04B7EA3C876EC6937C135 /* libffi.xcframework */; };
+		1A5D42A5944627142BF1A1E2 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 304B44DFB60F5D32DE4BBE7C /* libbz2.tbd */; };
+		1D784C868992760B84A01FF7 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF4A4BCF89F49D2ABB85381E /* Accelerate.framework */; };
+		23354BB58FC13590641FBB9A /* libSDL2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A154B7BBEB540B4BE67BC26 /* libSDL2.xcframework */; };
+		25EE4AA0A91DC71A54A354D0 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD05458E9280736ED81E35E9 /* OpenGLES.framework */; };
+		2B4C48D5A50063FEC9AADD0C /* libSDL2_mixer.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DB432AA65E95D97805274E /* libSDL2_mixer.xcframework */; };
+		2FC44C199716C42174242A49 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC434B4AAB988B109280FB0F /* UIKit.framework */; };
+		3AFB422CBCE2616820ED8064 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DC164C8E8FD158A6AD40EA78 /* libsqlite3.tbd */; };
+		406948FE8BA9D606CE23C4EF /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2984AE6A5A5779CEF84A2B6 /* WebKit.framework */; };
+		49174F2C9FC2CA56C126A97E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4F4D3F8A4529479D185354 /* AVFoundation.framework */; };
+		52764F05A5A39160AAEA807A /* libSDL2_ttf.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E394EE39361EC1396512A81 /* libSDL2_ttf.xcframework */; };
+		57864152BE9D2FA8EDE7784B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67354D2F891B93DBE79147CC /* CoreMotion.framework */; };
+		57A74D4E97671098A8D829BC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5754F99841DA55E0AB33AD5 /* MobileCoreServices.framework */; };
+		69624BC28F4F72FF30312E22 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C8415DA17D112661A0857D /* Metal.framework */; };
+		6E924946A884F2407A7BAB8D /* CoreHaptics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E74F27BB05256AEBF21DCE /* CoreHaptics.framework */; };
+		7F284FA09C9AB4922B1928FD /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383945149FAF7C299BFDF71B /* Photos.framework */; };
+		82B349008297269C5F13C7B7 /* libpng16.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C0465FB706326825ACEE04 /* libpng16.xcframework */; };
+		89E04A2284E6FC13DB666BFA /* libpython3.11.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D04249802EB53CBDA7B009 /* libpython3.11.xcframework */; };
+		89E84AA4A03F95C81DB32A46 /* libkivy.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DF4BB4A322253470F5344F /* libkivy.xcframework */; };
 		8BA125802B82360300CA31AF /* lib in Resources */ = {isa = PBXBuildFile; fileRef = 8BA1257F2B82360300CA31AF /* lib */; };
 		8BA125822B82361A00CA31AF /* include in Resources */ = {isa = PBXBuildFile; fileRef = 8BA125812B82361A00CA31AF /* include */; };
 		8BA125A22B8242E000CA31AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BA1259A2B8242E000CA31AF /* Assets.xcassets */; };
@@ -32,59 +34,49 @@
 		8BA125A72B8242E000CA31AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA125A12B8242E000CA31AF /* ContentView.swift */; };
 		8BA125A92B82431800CA31AF /* Binary in Resources */ = {isa = PBXBuildFile; fileRef = 8BA125A82B82431800CA31AF /* Binary */; };
 		8BA125B12B8301AF00CA31AF /* PyFFI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA125B02B8301AF00CA31AF /* PyFFI.swift */; };
-		8E7F4BC4BD06B2011A2DDC38 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3B14544895BF75ACE679226 /* AVFoundation.framework */; };
-		95EB4439B8F2FD3852F023FD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 918643DA9F16F1F907859CF7 /* ImageIO.framework */; };
-		9E514C72818F2C7D59E64727 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E33841A99EC252DF0EFA7879 /* MessageUI.framework */; };
-		A5C84100B338E360A7AD8548 /* libSDL2_image.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E045F4A911ED887F6682B8 /* libSDL2_image.xcframework */; };
-		A5D0489B984141CE1393B5F5 /* libpyobjus.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2A4D8FBA6C950D2AD1BA23 /* libpyobjus.xcframework */; };
-		A8DE4B1689F36E8954EEA7B8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 481849748FD629AE2F34619C /* CoreMedia.framework */; };
-		A9B4437BB0B391F49EE1F92B /* libffi.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2624837A605500729E52451 /* libffi.xcframework */; };
-		B4944C29A7BA776DE9C583EE /* libios.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89354D36AA617EF4A79C0E2D /* libios.xcframework */; };
-		CD46494EA75D545351C78208 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14B4665BFD5E3691FC7F8CF /* WebKit.framework */; };
-		DA8542CF9B11465E606A5F0A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146D49EDA604E709E23C0855 /* UIKit.framework */; };
-		DDCB4633B0DF35DF29D10F5A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8945F1B372E8FFB23AB223 /* MobileCoreServices.framework */; };
-		DE3341EABEF580525DBB1F07 /* libpng16.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0CE4196834A3FBF6FE9C3FD /* libpng16.xcframework */; };
-		E4AC4F018488698585F27318 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF504C90BCF33A08A93AB3A6 /* CoreGraphics.framework */; };
-		ED124EB9BFF1F474E079079A /* libSDL2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FC4860A888229B42EC8196 /* libSDL2.xcframework */; };
-		EDBE4CBA93ED53F3BFBE3FDF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D91402FB9C6C9EED29A13F0 /* QuartzCore.framework */; };
-		F0F4476B844492F0E0185264 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98D43A586AAF9B87FAE00D7 /* CoreVideo.framework */; };
-		F6594400B02A0AE2D7D69B9F /* libpython3.11.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED74EB1A971F83782BC32A2 /* libpython3.11.xcframework */; };
+		8BB963C72B841238008DF783 /* bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB963C62B841238008DF783 /* bridge.m */; };
+		8EBD4D6891705CDA29A696C8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6C4D8FB59E18D458AD8A64 /* libz.tbd */; };
+		8F794863A7A8B1D59200C584 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A704DF3BF7C1468C71ECA1A /* CoreVideo.framework */; };
+		9F23489A83D2830C5DB8D318 /* libSDL2_image.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B94B5EB2AC3BD23F5EB6EA /* libSDL2_image.xcframework */; };
+		A2854CD2B0E49221D7A6519E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC54BC4B679FFEE3DE67305 /* AudioToolbox.framework */; };
+		BE884EEABA5685431411584F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629944FB86A58C43585FAECF /* ImageIO.framework */; };
+		C190406E9725E1B9252797B1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D7429494256471536B655B /* MessageUI.framework */; };
+		C58F42D899E3157AB60071D9 /* libssl.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754B4B6986717FD9AE02E446 /* libssl.xcframework */; };
+		D1F8464A9100780F53D47A5F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A67047FBA215E86E1110D14B /* libc++.tbd */; };
+		D34146FAA2E6ABE50DDEEFA4 /* libcrypto.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF442348DB5DD8FCF7129FC /* libcrypto.xcframework */; };
+		D83047069B7B6E9FDF7C9D5E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491C49009814EEDE01318245 /* CoreGraphics.framework */; };
+		DD8E4ED4BA81E4CDCF6CBEF5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F44E0BA15324CB1A7B039C /* QuartzCore.framework */; };
+		E52A49E99627E2EEC258EC9B /* libpyobjus.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B443CAAD1ED677D1BA05C4 /* libpyobjus.xcframework */; };
+		F0BE416491121372AA85A0D6 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 144A44C2B9A01FBDD1B55CA9 /* CoreMedia.framework */; };
+		F55445BAA7492872DFB316D8 /* libios.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78464C36BBFE7D9FB4BAB0C3 /* libios.xcframework */; };
+		FE0249CBA73049BC5DB30792 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1024479B47DF445A33CD27F /* GameController.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		7555FFB4242A642300829871 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		146D49EDA604E709E23C0855 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		23FC4860A888229B42EC8196 /* libSDL2.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libSDL2.xcframework; path = ../dist/xcframework/libSDL2.xcframework; sourceTree = SOURCE_ROOT; };
-		2EAF460895EA2B3799DDD082 /* libSDL2_ttf.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libSDL2_ttf.xcframework; path = ../dist/xcframework/libSDL2_ttf.xcframework; sourceTree = SOURCE_ROOT; };
-		2ED74EB1A971F83782BC32A2 /* libpython3.11.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libpython3.11.xcframework; path = ../dist/xcframework/libpython3.11.xcframework; sourceTree = SOURCE_ROOT; };
-		3A2A4D8FBA6C950D2AD1BA23 /* libpyobjus.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libpyobjus.xcframework; path = ../dist/xcframework/libpyobjus.xcframework; sourceTree = SOURCE_ROOT; };
-		3E4A49D3A89A8DF72F3CB88E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = "libc++.tbd"; sourceTree = DEVELOPER_DIR; };
-		41BC424C8579C3851DDB1C3E /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Metal.framework; sourceTree = DEVELOPER_DIR; };
-		481849748FD629AE2F34619C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
-		53FF4391ADD810284DF2907C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
-		6B6541559D6E4E2596B5FE18 /* libSDL2_mixer.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libSDL2_mixer.xcframework; path = ../dist/xcframework/libSDL2_mixer.xcframework; sourceTree = SOURCE_ROOT; };
-		6BEB49B597831C46AA127608 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Accelerate.framework; sourceTree = DEVELOPER_DIR; };
-		72364FE98963BEC1354E22E1 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		01E74F27BB05256AEBF21DCE /* CoreHaptics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreHaptics.framework; sourceTree = DEVELOPER_DIR; };
+		05D7429494256471536B655B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MessageUI.framework; sourceTree = DEVELOPER_DIR; };
+		0A154B7BBEB540B4BE67BC26 /* libSDL2.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libSDL2.xcframework; path = ../dist/xcframework/libSDL2.xcframework; sourceTree = SOURCE_ROOT; };
+		12C8415DA17D112661A0857D /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Metal.framework; sourceTree = DEVELOPER_DIR; };
+		144A44C2B9A01FBDD1B55CA9 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		1FB04B7EA3C876EC6937C135 /* libffi.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libffi.xcframework; path = ../dist/xcframework/libffi.xcframework; sourceTree = SOURCE_ROOT; };
+		2A704DF3BF7C1468C71ECA1A /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreVideo.framework; sourceTree = DEVELOPER_DIR; };
+		2FC54BC4B679FFEE3DE67305 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		304B44DFB60F5D32DE4BBE7C /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = libbz2.tbd; sourceTree = DEVELOPER_DIR; };
+		31C0465FB706326825ACEE04 /* libpng16.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libpng16.xcframework; path = ../dist/xcframework/libpng16.xcframework; sourceTree = SOURCE_ROOT; };
+		32B94B5EB2AC3BD23F5EB6EA /* libSDL2_image.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libSDL2_image.xcframework; path = ../dist/xcframework/libSDL2_image.xcframework; sourceTree = SOURCE_ROOT; };
+		34DF4BB4A322253470F5344F /* libkivy.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libkivy.xcframework; path = ../dist/xcframework/libkivy.xcframework; sourceTree = SOURCE_ROOT; };
+		383945149FAF7C299BFDF71B /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Photos.framework; sourceTree = DEVELOPER_DIR; };
+		3FF442348DB5DD8FCF7129FC /* libcrypto.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libcrypto.xcframework; path = ../dist/xcframework/libcrypto.xcframework; sourceTree = SOURCE_ROOT; };
+		491C49009814EEDE01318245 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		629944FB86A58C43585FAECF /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImageIO.framework; sourceTree = DEVELOPER_DIR; };
+		62DB432AA65E95D97805274E /* libSDL2_mixer.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libSDL2_mixer.xcframework; path = ../dist/xcframework/libSDL2_mixer.xcframework; sourceTree = SOURCE_ROOT; };
+		67354D2F891B93DBE79147CC /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		6E6C4D8FB59E18D458AD8A64 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = libz.tbd; sourceTree = DEVELOPER_DIR; };
+		754B4B6986717FD9AE02E446 /* libssl.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libssl.xcframework; path = ../dist/xcframework/libssl.xcframework; sourceTree = SOURCE_ROOT; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		796340898FF6E1E1C8BE3038 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = libbz2.tbd; sourceTree = DEVELOPER_DIR; };
-		7D91402FB9C6C9EED29A13F0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		7DE840E0BA273F0C46AF746F /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Photos.framework; sourceTree = DEVELOPER_DIR; };
-		87C8414882D8666AD797B99B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
-		89354D36AA617EF4A79C0E2D /* libios.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libios.xcframework; path = ../dist/xcframework/libios.xcframework; sourceTree = SOURCE_ROOT; };
-		8B36493D916FCC3810B1C3CD /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = libz.tbd; sourceTree = DEVELOPER_DIR; };
+		78464C36BBFE7D9FB4BAB0C3 /* libios.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libios.xcframework; path = ../dist/xcframework/libios.xcframework; sourceTree = SOURCE_ROOT; };
+		87D04249802EB53CBDA7B009 /* libpython3.11.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libpython3.11.xcframework; path = ../dist/xcframework/libpython3.11.xcframework; sourceTree = SOURCE_ROOT; };
 		8BA1257F2B82360300CA31AF /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = ../dist/root/python3/lib; sourceTree = "<group>"; };
 		8BA125812B82361A00CA31AF /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; name = include; path = ../dist/root/python3/include; sourceTree = "<group>"; };
 		8BA1259A2B8242E000CA31AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,22 +86,20 @@
 		8BA125A82B82431800CA31AF /* Binary */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Binary; sourceTree = "<group>"; };
 		8BA125AD2B82454C00CA31AF /* iosApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iosApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		8BA125B02B8301AF00CA31AF /* PyFFI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyFFI.swift; sourceTree = "<group>"; };
-		918643DA9F16F1F907859CF7 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImageIO.framework; sourceTree = DEVELOPER_DIR; };
-		945C433ABFACD20732C7C0B1 /* libkivy.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libkivy.xcframework; path = ../dist/xcframework/libkivy.xcframework; sourceTree = SOURCE_ROOT; };
-		A2624837A605500729E52451 /* libffi.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libffi.xcframework; path = ../dist/xcframework/libffi.xcframework; sourceTree = SOURCE_ROOT; };
-		A3B14544895BF75ACE679226 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
-		A945465E8D2FC10E9224234F /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GameController.framework; sourceTree = DEVELOPER_DIR; };
-		AD434D75BC9668337AC1719C /* CoreHaptics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreHaptics.framework; sourceTree = DEVELOPER_DIR; };
-		B3E045F4A911ED887F6682B8 /* libSDL2_image.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libSDL2_image.xcframework; path = ../dist/xcframework/libSDL2_image.xcframework; sourceTree = SOURCE_ROOT; };
-		B73A4E68BD09038F984AC52F /* libcrypto.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libcrypto.xcframework; path = ../dist/xcframework/libcrypto.xcframework; sourceTree = SOURCE_ROOT; };
-		BA8945F1B372E8FFB23AB223 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		BFD54D90B21650C31B5D1B07 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = libsqlite3.tbd; sourceTree = DEVELOPER_DIR; };
-		C98D43A586AAF9B87FAE00D7 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreVideo.framework; sourceTree = DEVELOPER_DIR; };
-		D0CE4196834A3FBF6FE9C3FD /* libpng16.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libpng16.xcframework; path = ../dist/xcframework/libpng16.xcframework; sourceTree = SOURCE_ROOT; };
-		D2CB4CF7B2D42CD329BE5C7A /* libssl.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libssl.xcframework; path = ../dist/xcframework/libssl.xcframework; sourceTree = SOURCE_ROOT; };
-		E14B4665BFD5E3691FC7F8CF /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebKit.framework; sourceTree = DEVELOPER_DIR; };
-		E33841A99EC252DF0EFA7879 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MessageUI.framework; sourceTree = DEVELOPER_DIR; };
-		EF504C90BCF33A08A93AB3A6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		8BB963C52B841232008DF783 /* bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
+		8BB963C62B841238008DF783 /* bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bridge.m; sourceTree = "<group>"; };
+		8D4F4D3F8A4529479D185354 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		8E394EE39361EC1396512A81 /* libSDL2_ttf.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libSDL2_ttf.xcframework; path = ../dist/xcframework/libSDL2_ttf.xcframework; sourceTree = SOURCE_ROOT; };
+		A0F44E0BA15324CB1A7B039C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		A2B443CAAD1ED677D1BA05C4 /* libpyobjus.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libpyobjus.xcframework; path = ../dist/xcframework/libpyobjus.xcframework; sourceTree = SOURCE_ROOT; };
+		A67047FBA215E86E1110D14B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = "libc++.tbd"; sourceTree = DEVELOPER_DIR; };
+		AD05458E9280736ED81E35E9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
+		B1024479B47DF445A33CD27F /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GameController.framework; sourceTree = DEVELOPER_DIR; };
+		C2984AE6A5A5779CEF84A2B6 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebKit.framework; sourceTree = DEVELOPER_DIR; };
+		C5754F99841DA55E0AB33AD5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		CC434B4AAB988B109280FB0F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		DC164C8E8FD158A6AD40EA78 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = libsqlite3.tbd; sourceTree = DEVELOPER_DIR; };
+		EF4A4BCF89F49D2ABB85381E /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Accelerate.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,40 +107,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66F541D2BC782AF4131DDF50 /* AudioToolbox.framework in Frameworks */,
-				82B74383BFD266399EFBC4AE /* CoreHaptics.framework in Frameworks */,
-				95EB4439B8F2FD3852F023FD /* ImageIO.framework in Frameworks */,
-				A8DE4B1689F36E8954EEA7B8 /* CoreMedia.framework in Frameworks */,
-				EDBE4CBA93ED53F3BFBE3FDF /* QuartzCore.framework in Frameworks */,
-				DA8542CF9B11465E606A5F0A /* UIKit.framework in Frameworks */,
-				08D64A02AFD7E4D7D7A2751A /* Accelerate.framework in Frameworks */,
-				F0F4476B844492F0E0185264 /* CoreVideo.framework in Frameworks */,
-				741A42F78EF9813FDE735FB6 /* CoreMotion.framework in Frameworks */,
-				E4AC4F018488698585F27318 /* CoreGraphics.framework in Frameworks */,
-				8E7F4BC4BD06B2011A2DDC38 /* AVFoundation.framework in Frameworks */,
-				0EF5476B9B4BA693829AFFDD /* Photos.framework in Frameworks */,
-				9E514C72818F2C7D59E64727 /* MessageUI.framework in Frameworks */,
-				82E4404BA67E4574AC3BBA59 /* OpenGLES.framework in Frameworks */,
-				DDCB4633B0DF35DF29D10F5A /* MobileCoreServices.framework in Frameworks */,
-				CD46494EA75D545351C78208 /* WebKit.framework in Frameworks */,
-				60524B85973A9ED078419A07 /* Metal.framework in Frameworks */,
-				3A754535BADE292945001594 /* GameController.framework in Frameworks */,
-				05994D22B1AAD8FA4C708881 /* libz.tbd in Frameworks */,
-				74DE4518AA52FDB042ECDAF0 /* libsqlite3.tbd in Frameworks */,
-				5F704A039E9A93617B9DEBF4 /* libbz2.tbd in Frameworks */,
-				329F44D9BE456B2156075AC9 /* libc++.tbd in Frameworks */,
-				A9B4437BB0B391F49EE1F92B /* libffi.xcframework in Frameworks */,
-				6CC34032B2623ABA3EB2D835 /* libSDL2_mixer.xcframework in Frameworks */,
-				21E444448AAA87AE353A2864 /* libssl.xcframework in Frameworks */,
-				ED124EB9BFF1F474E079079A /* libSDL2.xcframework in Frameworks */,
-				7E0544A6949B4B747C929F13 /* libkivy.xcframework in Frameworks */,
-				75E84F739A6AE0C9923ECE48 /* libcrypto.xcframework in Frameworks */,
-				F6594400B02A0AE2D7D69B9F /* libpython3.11.xcframework in Frameworks */,
-				B4944C29A7BA776DE9C583EE /* libios.xcframework in Frameworks */,
-				A5D0489B984141CE1393B5F5 /* libpyobjus.xcframework in Frameworks */,
-				DE3341EABEF580525DBB1F07 /* libpng16.xcframework in Frameworks */,
-				A5C84100B338E360A7AD8548 /* libSDL2_image.xcframework in Frameworks */,
-				2CFA4677AFD6C3ED985B96F7 /* libSDL2_ttf.xcframework in Frameworks */,
+				1D784C868992760B84A01FF7 /* Accelerate.framework in Frameworks */,
+				BE884EEABA5685431411584F /* ImageIO.framework in Frameworks */,
+				7F284FA09C9AB4922B1928FD /* Photos.framework in Frameworks */,
+				F0BE416491121372AA85A0D6 /* CoreMedia.framework in Frameworks */,
+				D83047069B7B6E9FDF7C9D5E /* CoreGraphics.framework in Frameworks */,
+				49174F2C9FC2CA56C126A97E /* AVFoundation.framework in Frameworks */,
+				57A74D4E97671098A8D829BC /* MobileCoreServices.framework in Frameworks */,
+				25EE4AA0A91DC71A54A354D0 /* OpenGLES.framework in Frameworks */,
+				8F794863A7A8B1D59200C584 /* CoreVideo.framework in Frameworks */,
+				FE0249CBA73049BC5DB30792 /* GameController.framework in Frameworks */,
+				2FC44C199716C42174242A49 /* UIKit.framework in Frameworks */,
+				C190406E9725E1B9252797B1 /* MessageUI.framework in Frameworks */,
+				57864152BE9D2FA8EDE7784B /* CoreMotion.framework in Frameworks */,
+				A2854CD2B0E49221D7A6519E /* AudioToolbox.framework in Frameworks */,
+				69624BC28F4F72FF30312E22 /* Metal.framework in Frameworks */,
+				6E924946A884F2407A7BAB8D /* CoreHaptics.framework in Frameworks */,
+				406948FE8BA9D606CE23C4EF /* WebKit.framework in Frameworks */,
+				DD8E4ED4BA81E4CDCF6CBEF5 /* QuartzCore.framework in Frameworks */,
+				1A5D42A5944627142BF1A1E2 /* libbz2.tbd in Frameworks */,
+				3AFB422CBCE2616820ED8064 /* libsqlite3.tbd in Frameworks */,
+				8EBD4D6891705CDA29A696C8 /* libz.tbd in Frameworks */,
+				D1F8464A9100780F53D47A5F /* libc++.tbd in Frameworks */,
+				D34146FAA2E6ABE50DDEEFA4 /* libcrypto.xcframework in Frameworks */,
+				82B349008297269C5F13C7B7 /* libpng16.xcframework in Frameworks */,
+				C58F42D899E3157AB60071D9 /* libssl.xcframework in Frameworks */,
+				E52A49E99627E2EEC258EC9B /* libpyobjus.xcframework in Frameworks */,
+				17C44BF39806A70427BDF42F /* libffi.xcframework in Frameworks */,
+				9F23489A83D2830C5DB8D318 /* libSDL2_image.xcframework in Frameworks */,
+				89E04A2284E6FC13DB666BFA /* libpython3.11.xcframework in Frameworks */,
+				89E84AA4A03F95C81DB32A46 /* libkivy.xcframework in Frameworks */,
+				23354BB58FC13590641FBB9A /* libSDL2.xcframework in Frameworks */,
+				2B4C48D5A50063FEC9AADD0C /* libSDL2_mixer.xcframework in Frameworks */,
+				F55445BAA7492872DFB316D8 /* libios.xcframework in Frameworks */,
+				52764F05A5A39160AAEA807A /* libSDL2_ttf.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,40 +169,40 @@
 		7555FFB0242A642200829871 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				87C8414882D8666AD797B99B /* AudioToolbox.framework */,
-				AD434D75BC9668337AC1719C /* CoreHaptics.framework */,
-				918643DA9F16F1F907859CF7 /* ImageIO.framework */,
-				481849748FD629AE2F34619C /* CoreMedia.framework */,
-				7D91402FB9C6C9EED29A13F0 /* QuartzCore.framework */,
-				146D49EDA604E709E23C0855 /* UIKit.framework */,
-				6BEB49B597831C46AA127608 /* Accelerate.framework */,
-				C98D43A586AAF9B87FAE00D7 /* CoreVideo.framework */,
-				72364FE98963BEC1354E22E1 /* CoreMotion.framework */,
-				EF504C90BCF33A08A93AB3A6 /* CoreGraphics.framework */,
-				A3B14544895BF75ACE679226 /* AVFoundation.framework */,
-				7DE840E0BA273F0C46AF746F /* Photos.framework */,
-				E33841A99EC252DF0EFA7879 /* MessageUI.framework */,
-				53FF4391ADD810284DF2907C /* OpenGLES.framework */,
-				BA8945F1B372E8FFB23AB223 /* MobileCoreServices.framework */,
-				E14B4665BFD5E3691FC7F8CF /* WebKit.framework */,
-				41BC424C8579C3851DDB1C3E /* Metal.framework */,
-				A945465E8D2FC10E9224234F /* GameController.framework */,
-				8B36493D916FCC3810B1C3CD /* libz.tbd */,
-				BFD54D90B21650C31B5D1B07 /* libsqlite3.tbd */,
-				796340898FF6E1E1C8BE3038 /* libbz2.tbd */,
-				3E4A49D3A89A8DF72F3CB88E /* libc++.tbd */,
-				A2624837A605500729E52451 /* libffi.xcframework */,
-				6B6541559D6E4E2596B5FE18 /* libSDL2_mixer.xcframework */,
-				D2CB4CF7B2D42CD329BE5C7A /* libssl.xcframework */,
-				23FC4860A888229B42EC8196 /* libSDL2.xcframework */,
-				945C433ABFACD20732C7C0B1 /* libkivy.xcframework */,
-				B73A4E68BD09038F984AC52F /* libcrypto.xcframework */,
-				2ED74EB1A971F83782BC32A2 /* libpython3.11.xcframework */,
-				89354D36AA617EF4A79C0E2D /* libios.xcframework */,
-				3A2A4D8FBA6C950D2AD1BA23 /* libpyobjus.xcframework */,
-				D0CE4196834A3FBF6FE9C3FD /* libpng16.xcframework */,
-				B3E045F4A911ED887F6682B8 /* libSDL2_image.xcframework */,
-				2EAF460895EA2B3799DDD082 /* libSDL2_ttf.xcframework */,
+				EF4A4BCF89F49D2ABB85381E /* Accelerate.framework */,
+				629944FB86A58C43585FAECF /* ImageIO.framework */,
+				383945149FAF7C299BFDF71B /* Photos.framework */,
+				144A44C2B9A01FBDD1B55CA9 /* CoreMedia.framework */,
+				491C49009814EEDE01318245 /* CoreGraphics.framework */,
+				8D4F4D3F8A4529479D185354 /* AVFoundation.framework */,
+				C5754F99841DA55E0AB33AD5 /* MobileCoreServices.framework */,
+				AD05458E9280736ED81E35E9 /* OpenGLES.framework */,
+				2A704DF3BF7C1468C71ECA1A /* CoreVideo.framework */,
+				B1024479B47DF445A33CD27F /* GameController.framework */,
+				CC434B4AAB988B109280FB0F /* UIKit.framework */,
+				05D7429494256471536B655B /* MessageUI.framework */,
+				67354D2F891B93DBE79147CC /* CoreMotion.framework */,
+				2FC54BC4B679FFEE3DE67305 /* AudioToolbox.framework */,
+				12C8415DA17D112661A0857D /* Metal.framework */,
+				01E74F27BB05256AEBF21DCE /* CoreHaptics.framework */,
+				C2984AE6A5A5779CEF84A2B6 /* WebKit.framework */,
+				A0F44E0BA15324CB1A7B039C /* QuartzCore.framework */,
+				304B44DFB60F5D32DE4BBE7C /* libbz2.tbd */,
+				DC164C8E8FD158A6AD40EA78 /* libsqlite3.tbd */,
+				6E6C4D8FB59E18D458AD8A64 /* libz.tbd */,
+				A67047FBA215E86E1110D14B /* libc++.tbd */,
+				3FF442348DB5DD8FCF7129FC /* libcrypto.xcframework */,
+				31C0465FB706326825ACEE04 /* libpng16.xcframework */,
+				754B4B6986717FD9AE02E446 /* libssl.xcframework */,
+				A2B443CAAD1ED677D1BA05C4 /* libpyobjus.xcframework */,
+				1FB04B7EA3C876EC6937C135 /* libffi.xcframework */,
+				32B94B5EB2AC3BD23F5EB6EA /* libSDL2_image.xcframework */,
+				87D04249802EB53CBDA7B009 /* libpython3.11.xcframework */,
+				34DF4BB4A322253470F5344F /* libkivy.xcframework */,
+				0A154B7BBEB540B4BE67BC26 /* libSDL2.xcframework */,
+				62DB432AA65E95D97805274E /* libSDL2_mixer.xcframework */,
+				78464C36BBFE7D9FB4BAB0C3 /* libios.xcframework */,
+				8E394EE39361EC1396512A81 /* libSDL2_ttf.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -252,6 +242,8 @@
 		B6BC4C52BCD90B93D9B40860 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8BB963C62B841238008DF783 /* bridge.m */,
+				8BB963C52B841232008DF783 /* bridge.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -270,7 +262,6 @@
 				7555FF79242A565900829871 /* Resources */,
 				7555FF77242A565900829871 /* Sources */,
 				7555FF78242A565900829871 /* Frameworks */,
-				7555FFB4242A642300829871 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -411,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BB963C72B841238008DF783 /* bridge.m in Sources */,
 				8BA125B12B8301AF00CA31AF /* PyFFI.swift in Sources */,
 				8BA125A72B8242E000CA31AF /* ContentView.swift in Sources */,
 				8BA125A32B8242E000CA31AF /* iOSApp.swift in Sources */,
@@ -543,6 +535,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
@@ -580,13 +574,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../common/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
-					"$(SRCROOT)/../pycomposeui/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
 					"$(SRCROOT)/../dist/xcframework",
 				);
 				HEADER_SEARCH_PATHS = (
@@ -600,8 +595,6 @@
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-framework",
-					PyComposeUI,
 					"-framework",
 					Common,
 				);

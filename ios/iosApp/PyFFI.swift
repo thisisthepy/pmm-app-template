@@ -63,9 +63,6 @@ private let customBuiltinImportString = """
     """
 
 func pyInitialize() -> Void {
-    // Change the executing path to Binary
-    chdir("Binary")
-
     // Special environment to prefer .pyo, and don't write bytecode if .py are found
     // because the process will not have a write attribute on the device.
     setenv("PYTHONOPTIMIZE", "2", 1)
@@ -94,7 +91,7 @@ func pyInitialize() -> Void {
     let pythonHome = Bundle.main.bundleURL.path
     setenv("PYTHONHOME", pythonHome, 1)
 
-    setenv("PYTHONPATH", "\(pythonHome)/lib/python3.11/:\(pythonHome)/lib/python3.11/site-packages", 1)
+    setenv("PYTHONPATH", "\(pythonHome)/lib/python3.11/:\(pythonHome)/lib/python3.11/site-packages:\(pythonHome)/Binary", 1)
 
     setenv("TMP", NSTemporaryDirectory(), 1)
 
@@ -113,6 +110,14 @@ func pyFinalize() -> Void {
 func pyImport(module: String) -> KotlinLong {
     let pointer: UnsafePointer<CChar>? = NSString(string: module).utf8String
     return KotlinLong.init(pointer: PyImport_Import(PyUnicode_DecodeFSDefault(pointer)))
+}
+
+func pyErrorOccurred() -> KotlinBoolean {
+    return KotlinBoolean.init(pointer: PyErr_Occurred())
+}
+
+func pyErrorPrint() -> Void {
+    PyErr_Print()
 }
 
 func pyObjectGetAttrString(obj: KotlinLong, attr: String) -> KotlinLong {

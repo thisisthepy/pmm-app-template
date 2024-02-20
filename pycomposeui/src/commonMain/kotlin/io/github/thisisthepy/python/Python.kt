@@ -1,16 +1,28 @@
 package io.github.thisisthepy.python
 
+import io.github.thisisthepy.python.PyObject.Companion.fromAddress
+
 
 object Python {
     class PyFFI(
         val pyInitialize: () -> Unit = { },
         val pyFinalize: () -> Unit = { },
         val pyImport: (String) -> Long = { _ -> 0 },
+        val pyErrorOccurred: () -> Boolean = { false },
+        val pyErrorPrint: () -> Unit = { },
         val pyObjectGetAttrString: (Long, String) -> Long = { _, _ -> 0 },
         val pyObjectCallObject: (Long, Long) -> Long = { _, _ -> 0 }
     )
 
     private var _nativeFFI: PyFFI? = null
+        set(nativeFFI) {
+            field = nativeFFI
+            if (nativeFFI == null) {
+                PyObject.notifyPythonKilled()
+            } else {
+                PyObject.notifyPythonStarted(nativeFFI)
+            }
+        }
 
     val isStarted: Boolean
         get() = _nativeFFI != null
@@ -34,16 +46,19 @@ object Python {
         if (_nativeFFI != null) {
             _nativeFFI!!.pyFinalize()
             _nativeFFI = null
-            PyObject.notifyPythonKilled()
         }
     }
 
     fun import(module: String): PyObject {
         if (_nativeFFI != null) {
-            val pModule = PyObject.fromAddress(_nativeFFI!!.pyImport(module))
+            val pModule = fromAddress(_nativeFFI!!.pyImport(module))
             if (pModule != null) {
                 return pModule
             } else {
+                if (_nativeFFI!!.pyErrorOccurred()) {
+                    println("ERROR: Python Error occurred.")
+                }
+                _nativeFFI!!.pyErrorPrint()
                 throw ModuleNotFoundException("ERROR: Could not find Python module named $module.")
             }
         } else {
