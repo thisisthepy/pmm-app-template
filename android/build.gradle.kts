@@ -63,7 +63,7 @@ android {
 dependencies {
     //implementation(projects.pythonMultiplatform)
     implementation(projects.pycomposeui)
-    implementation(projects.common)
+    implementation(projects.app)
     implementation(compose.ui)
     implementation(compose.material3)
     implementation(libs.androidx.activity.compose)

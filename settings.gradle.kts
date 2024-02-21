@@ -26,6 +26,6 @@ rootProject.name = "PyComposeUIApp"
 include(":android")
 include(":desktop")
 include(":web")
-include(":common")
+include(":app")
 include(":pycomposeui")
 //include(":python-multiplatform")

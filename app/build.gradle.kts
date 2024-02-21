@@ -34,7 +34,7 @@ kotlin {
         iosSimulatorArm64()
     ).forEach {
         it.binaries.framework {
-            baseName = "common"
+            baseName = "ComposeApp"
         }
     }
 
