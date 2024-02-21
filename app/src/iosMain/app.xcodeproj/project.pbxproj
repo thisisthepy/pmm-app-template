@@ -31,6 +31,8 @@
 		8B1A04CD2B85CD100008D451 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B1A04CC2B85CD100008D451 /* UIKit.framework */; };
 		8B1A04CF2B85CD190008D451 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B1A04CE2B85CD190008D451 /* WebKit.framework */; };
 		8B1A04DD2B85CEE90008D451 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1A04DC2B85CEE90008D451 /* Launch Screen.storyboard */; };
+		8B1A04E12B86081D0008D451 /* lib in Resources */ = {isa = PBXBuildFile; fileRef = 8B1A04E02B86081D0008D451 /* lib */; };
+		8B1A04E32B86082C0008D451 /* include in Resources */ = {isa = PBXBuildFile; fileRef = 8B1A04E22B86082C0008D451 /* include */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -78,6 +80,8 @@
 		8B1A04D22B85CD4A0008D451 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		8B1A04D32B85CD580008D451 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		8B1A04DC2B85CEE90008D451 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "swift/Storyboards/Launch Screen.storyboard"; sourceTree = "<group>"; };
+		8B1A04E02B86081D0008D451 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = ../../dist/root/python3/lib; sourceTree = "<group>"; };
+		8B1A04E22B86082C0008D451 /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; name = include; path = ../../dist/root/python3/include; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +186,8 @@
 		8B1A047E2B85BF0B0008D451 /* EmbeddedPython */ = {
 			isa = PBXGroup;
 			children = (
+				8B1A04E22B86082C0008D451 /* include */,
+				8B1A04E02B86081D0008D451 /* lib */,
 			);
 			name = EmbeddedPython;
 			sourceTree = "<group>";
@@ -274,6 +280,8 @@
 			files = (
 				8B1A047D2B85BEFC0008D451 /* Preview Content in Resources */,
 				8B1A04802B85BF3E0008D451 /* Assets.xcassets in Resources */,
+				8B1A04E12B86081D0008D451 /* lib in Resources */,
+				8B1A04E32B86082C0008D451 /* include in Resources */,
 				8B1A04DD2B85CEE90008D451 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
