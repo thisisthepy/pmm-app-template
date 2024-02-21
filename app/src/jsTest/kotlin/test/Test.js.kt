@@ -1,4 +1,4 @@
-package io.github.thisisthepy.pycomposeui.test.common
+package test
 
 import device.ui.Greeting
 import kotlin.test.Test

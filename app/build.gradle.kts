@@ -1,4 +1,5 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
+import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
@@ -57,7 +58,10 @@ kotlin {
     val skikoTarget = "${targetOs}-${targetArch}"
 
     js(IR) {
-        browser()
+        browser {
+            useCommonJs()
+            binaries.executable()
+        }
     }
 
     ios()
@@ -195,5 +199,16 @@ compose.desktop {
             packageName = "$group.pycomposeui.desktop"
             packageVersion = version.toString()
         }
+    }
+}
+
+compose.experimental {
+    web.application {}
+}
+
+afterEvaluate {
+    rootProject.extensions.configure<NodeJsRootExtension> {
+        versions.webpackDevServer.version = "4.0.0"
+        versions.webpackCli.version = "4.10.0"
     }
 }

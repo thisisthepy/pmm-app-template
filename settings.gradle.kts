@@ -23,7 +23,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "PyComposeUIApp"
 
-include(":web")
 include(":app")
 include(":pycomposeui")
 //include(":python-multiplatform")

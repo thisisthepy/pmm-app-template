@@ -1,4 +1,4 @@
-package io.github.thisisthepy.pycomposeui.test.common
+package device.ui.theme
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
@@ -7,8 +7,6 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import device.ui.theme.shapes
-import device.ui.theme.typography
 
 
 @Composable

@@ -1,6 +1,4 @@
-package io.github.thisisthepy.pycomposeui.test.common
-
-import device.resource.util.Platform
+package device.resource.util
 
 
 class JsPlatform: Platform {
