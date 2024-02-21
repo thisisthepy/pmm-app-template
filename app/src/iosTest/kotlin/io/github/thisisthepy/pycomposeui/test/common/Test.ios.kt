@@ -1,5 +1,6 @@
 package io.github.thisisthepy.pycomposeui.test.common
 
+import device.ui.Greeting
 import kotlin.test.Test
 import kotlin.test.assertTrue
 

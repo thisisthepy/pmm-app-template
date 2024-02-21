@@ -23,7 +23,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "PyComposeUIApp"
 
-include(":android")
 include(":desktop")
 include(":web")
 include(":app")
