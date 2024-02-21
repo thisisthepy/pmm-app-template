@@ -49,12 +49,12 @@
 /* Begin PBXFileReference section */
 		7555FF7B242A565900829871 /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1A04782B85BED60008D451 /* app-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "app-Info.plist"; sourceTree = "<group>"; };
-		8B1A047C2B85BEFC0008D451 /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Preview Content"; path = "app/Preview Content"; sourceTree = "<group>"; };
-		8B1A047F2B85BF3E0008D451 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = app/Assets.xcassets; sourceTree = "<group>"; };
-		8B1A04972B85C3820008D451 /* iOSApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = iOSApp.swift; path = app/iOSApp.swift; sourceTree = "<group>"; };
-		8B1A04992B85C38E0008D451 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = app/ContentView.swift; sourceTree = "<group>"; };
-		8B1A04A72B85C5570008D451 /* bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bridge.h; path = app/Bridges/bridge.h; sourceTree = "<group>"; };
-		8B1A04A82B85C5670008D451 /* bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = bridge.m; path = app/Bridges/bridge.m; sourceTree = "<group>"; };
+		8B1A047C2B85BEFC0008D451 /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Preview Content"; path = "swift/Preview Content"; sourceTree = "<group>"; };
+		8B1A047F2B85BF3E0008D451 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = swift/Assets.xcassets; sourceTree = "<group>"; };
+		8B1A04972B85C3820008D451 /* iOSApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = iOSApp.swift; path = swift/iOSApp.swift; sourceTree = "<group>"; };
+		8B1A04992B85C38E0008D451 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = swift/ContentView.swift; sourceTree = "<group>"; };
+		8B1A04A72B85C5570008D451 /* bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bridge.h; path = swift/Bridges/bridge.h; sourceTree = "<group>"; };
+		8B1A04A82B85C5670008D451 /* bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = bridge.m; path = swift/Bridges/bridge.m; sourceTree = "<group>"; };
 		8B1A04AC2B85CC5B0008D451 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		8B1A04AE2B85CC6F0008D451 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8B1A04B02B85CC750008D451 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -77,7 +77,7 @@
 		8B1A04D12B85CD360008D451 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		8B1A04D22B85CD4A0008D451 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		8B1A04D32B85CD580008D451 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		8B1A04DC2B85CEE90008D451 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "app/Storyboards/Launch Screen.storyboard"; sourceTree = "<group>"; };
+		8B1A04DC2B85CEE90008D451 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "swift/Storyboards/Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +283,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		7555FFB5242A651A00829871 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -296,7 +297,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"$SRCROOT/..\"\n./gradlew :common:embedAndSignAppleFrameworkForXcode\n";
+			shellScript = "cd \"$SRCROOT/../../..\"\n./gradlew :app:embedAndSignAppleFrameworkForXcode\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -438,11 +439,11 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "app/Preview\\ Content";
+				DEVELOPMENT_ASSET_PATHS = "swift/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../common/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
+					"$(SRCROOT)/../../build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
 				);
 				INFOPLIST_FILE = "app-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -453,7 +454,7 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
-					common,
+					ComposeApp,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.iosApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -471,11 +472,11 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "app/Preview\\ Content";
+				DEVELOPMENT_ASSET_PATHS = "swift/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../common/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
+					"$(SRCROOT)/../../build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
 				);
 				INFOPLIST_FILE = "app-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -486,7 +487,7 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
-					common,
+					ComposeApp,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.iosApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
