@@ -1,6 +1,5 @@
-package io.github.thisisthepy.pycomposeui.test.common
+package device.resource.util
 
-import device.resource.util.Platform
 import java.util.*
 
 

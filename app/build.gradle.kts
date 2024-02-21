@@ -1,3 +1,5 @@
+import org.jetbrains.compose.desktop.application.dsl.TargetFormat
+
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.android.application)
@@ -6,6 +8,9 @@ plugins {
 
     alias(libs.plugins.chaquo.python)
 }
+
+group = "io.github.thisisthepy"
+version = "1.0.0"
 
 chaquopy {
     defaultConfig {
@@ -34,7 +39,22 @@ kotlin {
         compilations.all {
             kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
         }
+        //withJava()
     }
+    val osName = System.getProperty("os.name")
+    val targetOs = when {
+        osName == "Mac OS X" -> "macos"
+        osName.startsWith("Win") -> "windows"
+        osName.startsWith("Linux") -> "linux"
+        else -> error("Unsupported OS: $osName")
+    }
+    val targetArch = when (val osArch = System.getProperty("os.arch")) {
+        "x86_64", "amd64" -> "x64"
+        "aarch64" -> "arm64"
+        else -> error("Unsupported arch: $osArch")
+    }
+    val skikoVersion = libs.versions.skiko.get()
+    val skikoTarget = "${targetOs}-${targetArch}"
 
     js(IR) {
         browser()
@@ -88,6 +108,8 @@ kotlin {
         }
         val desktopMain by getting {
             dependencies {
+                implementation(compose.desktop.currentOs)
+                implementation("org.jetbrains.skiko:skiko-awt-runtime-$skikoTarget:$skikoVersion")
                 api(compose.preview)
                 implementation(libs.ktor.jvm)
             }
@@ -115,13 +137,13 @@ kotlin {
 }
 
 android {
-    namespace = "io.github.thisisthepy.pycomposeui.android"
+    namespace = "$group.pycomposeui.android"
     compileSdk = 34
     defaultConfig {
-        applicationId = "io.github.thisisthepy.pycomposeui.android"
+        applicationId = "$group.pycomposeui.android"
         minSdk = 24
         versionCode = 1
-        versionName = "1.0"
+        versionName = version.toString()
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -162,5 +184,16 @@ android {
     }
     dependencies {
         debugImplementation(libs.compose.ui.tooling)
+    }
+}
+
+compose.desktop {
+    application {
+        mainClass = "MainKt"
+        nativeDistributions {
+            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
+            packageName = "$group.pycomposeui.desktop"
+            packageVersion = version.toString()
+        }
     }
 }
