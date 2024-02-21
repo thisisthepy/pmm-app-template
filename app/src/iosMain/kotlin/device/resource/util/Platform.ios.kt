@@ -1,7 +1,6 @@
-package io.github.thisisthepy.pycomposeui.test.common
+package device.resource.util
 
 import device.UIKit.UIDevice
-import device.resource.util.Platform
 
 class IOSPlatform: Platform {
     override val name: String = UIDevice.currentDevice.systemName() + " " + UIDevice.currentDevice.systemVersion

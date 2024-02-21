@@ -11,8 +11,6 @@
 		8B1A04802B85BF3E0008D451 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B1A047F2B85BF3E0008D451 /* Assets.xcassets */; };
 		8B1A04982B85C3820008D451 /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A04972B85C3820008D451 /* iOSApp.swift */; };
 		8B1A049A2B85C38E0008D451 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A04992B85C38E0008D451 /* ContentView.swift */; };
-		8B1A04A32B85C48C0008D451 /* lib in Resources */ = {isa = PBXBuildFile; fileRef = 8B1A04A22B85C48C0008D451 /* lib */; };
-		8B1A04A52B85C4D70008D451 /* include in Resources */ = {isa = PBXBuildFile; fileRef = 8B1A04A42B85C4D70008D451 /* include */; };
 		8B1A04A92B85C5670008D451 /* bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A04A82B85C5670008D451 /* bridge.m */; };
 		8B1A04AD2B85CC5B0008D451 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B1A04AC2B85CC5B0008D451 /* Accelerate.framework */; };
 		8B1A04AF2B85CC6F0008D451 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B1A04AE2B85CC6F0008D451 /* AudioToolbox.framework */; };
@@ -55,8 +53,6 @@
 		8B1A047F2B85BF3E0008D451 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = app/Assets.xcassets; sourceTree = "<group>"; };
 		8B1A04972B85C3820008D451 /* iOSApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = iOSApp.swift; path = app/iOSApp.swift; sourceTree = "<group>"; };
 		8B1A04992B85C38E0008D451 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = app/ContentView.swift; sourceTree = "<group>"; };
-		8B1A04A22B85C48C0008D451 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = ../dist/root/python3/lib; sourceTree = "<group>"; };
-		8B1A04A42B85C4D70008D451 /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; name = include; path = ../dist/root/python3/include; sourceTree = "<group>"; };
 		8B1A04A72B85C5570008D451 /* bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bridge.h; path = app/Bridges/bridge.h; sourceTree = "<group>"; };
 		8B1A04A82B85C5670008D451 /* bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = bridge.m; path = app/Bridges/bridge.m; sourceTree = "<group>"; };
 		8B1A04AC2B85CC5B0008D451 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -186,8 +182,6 @@
 		8B1A047E2B85BF0B0008D451 /* EmbeddedPython */ = {
 			isa = PBXGroup;
 			children = (
-				8B1A04A42B85C4D70008D451 /* include */,
-				8B1A04A22B85C48C0008D451 /* lib */,
 			);
 			name = EmbeddedPython;
 			sourceTree = "<group>";
@@ -278,8 +272,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B1A04A32B85C48C0008D451 /* lib in Resources */,
-				8B1A04A52B85C4D70008D451 /* include in Resources */,
 				8B1A047D2B85BEFC0008D451 /* Preview Content in Resources */,
 				8B1A04802B85BF3E0008D451 /* Assets.xcassets in Resources */,
 				8B1A04DD2B85CEE90008D451 /* Launch Screen.storyboard in Resources */,
