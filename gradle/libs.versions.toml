@@ -34,8 +34,6 @@ ktor-js = { module = "io.ktor:ktor-client-js", version.ref = "ktor" }
 ktor-jsonjs = { module = "io.ktor:ktor-client-json-js", version.ref = "ktor" }
 ktor-ios = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
-stately-concurrent-collections = { module = "co.touchlab:stately-concurrent-collections", version.ref = "stately-concurrent-collections" }
-toasterAtSnackBar = { module = "io.github.untactorder:toasterAtSnackBar", version.ref = "toasterAtSnackBar" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

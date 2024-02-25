@@ -78,7 +78,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(projects.pycomposeui)
+                //api(projects.pycomposeui)
                 api(compose.runtime)
                 api(compose.ui)
                 api(compose.foundation)
@@ -131,7 +131,7 @@ kotlin {
         val iosSimulatorArm64Main by getting
         val iosMain by getting {
             dependencies {
-                api(project(":app:src:iosMain:swift:Bindings"))
+                api("io.github.thisisthepy:python-multiplatform:3.11.6.0")
                 implementation(libs.ktor.ios)
             }
             iosX64Main.dependsOn(this)

@@ -31,8 +31,8 @@
 		8B1A04CD2B85CD100008D451 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B1A04CC2B85CD100008D451 /* UIKit.framework */; };
 		8B1A04CF2B85CD190008D451 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B1A04CE2B85CD190008D451 /* WebKit.framework */; };
 		8B1A04DD2B85CEE90008D451 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1A04DC2B85CEE90008D451 /* Launch Screen.storyboard */; };
-		8B1A04E12B86081D0008D451 /* lib in Resources */ = {isa = PBXBuildFile; fileRef = 8B1A04E02B86081D0008D451 /* lib */; };
-		8B1A04E32B86082C0008D451 /* include in Resources */ = {isa = PBXBuildFile; fileRef = 8B1A04E22B86082C0008D451 /* include */; };
+		8BFA8DAD2B8B4C9C00E220D3 /* include in Resources */ = {isa = PBXBuildFile; fileRef = 8BFA8DAC2B8B4C9B00E220D3 /* include */; };
+		8BFA8DAF2B8B4CAF00E220D3 /* lib in Resources */ = {isa = PBXBuildFile; fileRef = 8BFA8DAE2B8B4CAF00E220D3 /* lib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -80,8 +80,8 @@
 		8B1A04D22B85CD4A0008D451 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		8B1A04D32B85CD580008D451 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		8B1A04DC2B85CEE90008D451 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "swift/Storyboards/Launch Screen.storyboard"; sourceTree = "<group>"; };
-		8B1A04E02B86081D0008D451 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = ../../dist/root/python3/lib; sourceTree = "<group>"; };
-		8B1A04E22B86082C0008D451 /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; name = include; path = ../../dist/root/python3/include; sourceTree = "<group>"; };
+		8BFA8DAC2B8B4C9B00E220D3 /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; name = include; path = ../../dist/toolchain/darwin/root/python3/include; sourceTree = "<group>"; };
+		8BFA8DAE2B8B4CAF00E220D3 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = ../../dist/toolchain/darwin/root/python3/lib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				8B1A04A62B85C5480008D451 /* Bridges */,
-				8B1A04A12B85C4480008D451 /* Bindings */,
 				8B1A04992B85C38E0008D451 /* ContentView.swift */,
 				8B1A04972B85C3820008D451 /* iOSApp.swift */,
 			);
@@ -186,17 +185,10 @@
 		8B1A047E2B85BF0B0008D451 /* EmbeddedPython */ = {
 			isa = PBXGroup;
 			children = (
-				8B1A04E22B86082C0008D451 /* include */,
-				8B1A04E02B86081D0008D451 /* lib */,
+				8BFA8DAC2B8B4C9B00E220D3 /* include */,
+				8BFA8DAE2B8B4CAF00E220D3 /* lib */,
 			);
 			name = EmbeddedPython;
-			sourceTree = "<group>";
-		};
-		8B1A04A12B85C4480008D451 /* Bindings */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Bindings;
 			sourceTree = "<group>";
 		};
 		8B1A04A62B85C5480008D451 /* Bridges */ = {
@@ -278,10 +270,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BFA8DAF2B8B4CAF00E220D3 /* lib in Resources */,
+				8BFA8DAD2B8B4C9C00E220D3 /* include in Resources */,
 				8B1A047D2B85BEFC0008D451 /* Preview Content in Resources */,
 				8B1A04802B85BF3E0008D451 /* Assets.xcassets in Resources */,
-				8B1A04E12B86081D0008D451 /* lib in Resources */,
-				8B1A04E32B86082C0008D451 /* include in Resources */,
 				8B1A04DD2B85CEE90008D451 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,7 +443,7 @@
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../../build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
+					"$(SRCROOT)/../../../build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
 				);
 				INFOPLIST_FILE = "app-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -484,7 +476,7 @@
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../../build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
+					"$(SRCROOT)/../../../build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
 				);
 				INFOPLIST_FILE = "app-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

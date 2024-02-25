@@ -3,6 +3,7 @@ pluginManagement {
     repositories {
         google()
         gradlePluginPortal()
+        mavenLocal()
         mavenCentral()
 
         maven {
@@ -17,13 +18,13 @@ pluginManagement {
 dependencyResolutionManagement {
     repositories {
         google()
+        mavenLocal()
         mavenCentral()
     }
 }
 
 rootProject.name = "PyComposeUIApp"
 
-include(":app:src:iosMain:swift:Bindings")
 include(":app")
-include(":pycomposeui")
+///include(":pycomposeui")
 //include(":python-multiplatform")
