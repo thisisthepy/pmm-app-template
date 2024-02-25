@@ -69,8 +69,8 @@ kotlin {
         iosX64(),
         iosArm64(),
         iosSimulatorArm64()
-    ).forEach {
-        it.binaries.framework {
+    ).forEach { iosTarget ->
+        iosTarget.binaries.framework {
             baseName = "ComposeApp"
         }
     }
@@ -131,6 +131,7 @@ kotlin {
         val iosSimulatorArm64Main by getting
         val iosMain by getting {
             dependencies {
+                api(project(":app:src:iosMain:swift:Bindings"))
                 implementation(libs.ktor.ios)
             }
             iosX64Main.dependsOn(this)
@@ -141,10 +142,10 @@ kotlin {
 }
 
 android {
-    namespace = "$group.pycomposeui.android"
+    namespace = "$group.android"
     compileSdk = 34
     defaultConfig {
-        applicationId = "$group.pycomposeui.android"
+        applicationId = "$group.android"
         minSdk = 24
         versionCode = 1
         versionName = version.toString()
@@ -196,7 +197,7 @@ compose.desktop {
         mainClass = "MainKt"
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "$group.pycomposeui.desktop"
+            packageName = "$group.desktop"
             packageVersion = version.toString()
         }
     }

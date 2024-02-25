@@ -1,4 +1,4 @@
-package io.github.thisisthepy.pycomposeui.android
+package io.github.thisisthepy.android
 
 import App
 import android.os.Bundle

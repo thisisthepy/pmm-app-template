@@ -23,6 +23,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "PyComposeUIApp"
 
+include(":app:src:iosMain:swift:Bindings")
 include(":app")
 include(":pycomposeui")
 //include(":python-multiplatform")
